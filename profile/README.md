@@ -65,8 +65,8 @@ You can view and interact with the simulation of our fall detection device on th
 2. **Open the project in Arduino IDE**:
     - Open `fall_detection.ino` in the Arduino IDE.
 
-3. **Configure WiFi Credentials**:
-    - Update the `SSID` and `PASSWORD` variables in the code with your WiFi credentials.
+3. **Configure WiFi and Twilio Credentials**:
+    - Update the `SSID` and `PASSWORD` variables in the code with your WiFi credentials. Also Add your setuped twilio account sid and auth token
 
 4. **Upload the Code**:
     - Connect your microcontroller(Atemga328PU) to your computer and upload the code using the Arduino IDE.
