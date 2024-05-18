@@ -16,6 +16,22 @@ Falls are a major health risk for elderly people, and timely assistance is cruci
 - **Custom PCB Design**: Designed using Altium.
 - **Enclosure Design**: Modeled and simulated using SOLIDWORKS.
 
+## Fall Detection Concepts
+
+Our fall detection algorithm is based on analyzing movement patterns and accelerations using the MPU6050 sensor. Here are the key concepts:
+
+- **Movement Indication**: 
+  - Messages are sent to the HiveMQ server under the topic "Notifications" to indicate various movements.
+
+- **Fall Detection**:
+  - Falls are identified when the resultant acceleration drops near zero, then suddenly increases to a value higher than 1g, and finally decreases back to around 1g.
+
+- **Walking Detection**:
+  - Walking is identified when the longitudinal acceleration is about 1g, and the resultant acceleration has slightly higher values, approximately 1.1g.
+
+- **Getting Up Detection**:
+  - Getting up from the bed is detected when the longitudinal acceleration increases, and the turned angle approaches 90 degrees.
+
 ## Hardware Components
 
 - **MPU6050**: Gyroscope and accelerometer module for motion detection.
@@ -42,7 +58,7 @@ You can view and interact with the simulation of our fall detection device on th
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/fall-detection-device.git
+    git clone git@github.com:Medmindz/Codes.git
     cd fall-detection-device
     ```
 
@@ -53,7 +69,7 @@ You can view and interact with the simulation of our fall detection device on th
     - Update the `SSID` and `PASSWORD` variables in the code with your WiFi credentials.
 
 4. **Upload the Code**:
-    - Connect your ESP8266 module to your computer and upload the code using the Arduino IDE.
+    - Connect your microcontroller(Atemga328PU) to your computer and upload the code using the Arduino IDE.
 
 ## Usage
 
@@ -65,15 +81,6 @@ Once the device is powered on and connected to a WiFi network:
 
 - **PCB Design**: Available in the `pcb` directory (Altium project files).
 - **Enclosure Design**: Available in the `enclosure` directory (SOLIDWORKS files).
-
-## Contributing
-
-We welcome contributions from the community. To contribute:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-xyz`).
-3. Commit your changes (`git commit -am 'Add feature'`).
-4. Push to the branch (`git push origin feature-xyz`).
-5. Create a new Pull Request.
 
 ## License
 
